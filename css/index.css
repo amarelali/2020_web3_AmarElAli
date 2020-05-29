@@ -1,0 +1,24 @@
+body{
+    background-color:#EEE;
+}
+
+li{
+    text-decoration: none;
+    display:inline-block;
+
+}
+.unorderList{
+    list-style-type:none;
+}
+header{
+
+    background-image: url("img/MyRecipesLogo.jpg");
+}
+.logo {
+width:20%;
+}
+.header{
+    background-color:white;
+    width: 100%;
+    margin: 0px;
+}
