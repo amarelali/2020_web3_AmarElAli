@@ -1,5 +1,6 @@
 body{
     background-color:#EEE;
+    overflow: hidden;
 }
 
 li{
@@ -21,4 +22,17 @@ width:20%;
     background-color:white;
     width: 100%;
     margin: 0px;
+}
+/* Log In */
+#loginContainer{
+    width: 291px;
+height: 107px;
+background: #CEDBEE !important;
+margin: auto;
+padding: 38px;
+border-radius: 6px;
+}
+
+h2,h3{
+    text-align: center;
 }
