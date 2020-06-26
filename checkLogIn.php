@@ -20,7 +20,7 @@ if(password_verify($p,$row["Password"])){
 <?php 
 }
 }else{
-    header("location:createAccount.html");
+    header("location:createAccountDesign.php");
 }
 mysqli_free_result($res);
 mysqli_close($connect);

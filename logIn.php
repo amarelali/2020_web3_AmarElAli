@@ -1,54 +1,19 @@
 <html>
 <head>
 <title>My Recipes</title>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" />
-<link rel="stylesheet" type="text/css" href="css/index.css" />
-<script src="js/jquery.min.js"></script>
-<script src="js/bootstrap.min.js"></script>
 
 
 </head>
 <body>
-<!-- <header> -->
-    <!-- <nav> -->
-    <div class="container-fliud">
-         <div class="row header" style="position:absolute;z-index:2">
-            <div class="col-12">
-            <div class="col-6" >
-            <img class="logo" src="img/MyRecipesLogo.jpg" />
-            </div>
-            <div class="col-6" style="display:block;">
-            <!-- <ul class="unorderList" style="float:right">
-                <li><a href="#">Hello</a></li>
-                <li><a href="#">Hello</a></li>
-                <li><a href="#">Hello</a></li>
-                <li><a href="#">Hello</a></li>
-            </ul>
-            </div> -->
-            </div>
-        </div> 
-    </div>
-    <!-- </nav> -->
-<!-- </header> -->
+<?php
+include("header.php");
+?>
 <!-----------------------------------Login-------------------->
-<!-- <div style="background-image:url('img/MyRecipesBackground.jpg');background-repeat:no-repeat;background-size: cover;width:100%;height:80%">
-<span style="color:white">hello</span>
-<!-- </div> --
-<h2>Welcome our dearest Elected !</h2>
-    <h3 style="margin-top: -12px;">Log in and vote your favorite candidate</h3> -->
-  
-
-
-
-
-<div style="width:100%;position:relative;">
-<img src='img/MyRecipesBackground2.jpg' width="100%"/>
-</div>
-<div class="container" id="LogIn" style="position:absolute;top:35%;left:33%;z-index:2">
+ 
+<div class="container" id="LogIn" style="position:absolute;top: 28%;">
 <div class="row">
             <div class="col-lg-6" style="max-width: 450px;">
-              <div class="card text-center card-form" style="background-color:#f1ae79 !important;padding: 10px;">
+              <div class="card text-center card-form" style="background-color:#8eb9ba !important;padding: 10px;">
                 <div class="card-body" style="padding: 10px;">
                   <h4>Welcome to My Recipes</h4>
                   <p style="font-size:20px;">
@@ -62,10 +27,10 @@
                     <div class="form-group">
                       <input type="password" class="form-control form-control-md" id="input3" name="password" placeholder="Password"  />
                     </div>
-                    <input type="submit" value="Log In" class="btn btn-outline-light btn-block btn-md" style="color: grey;">
-					<input type="reset" value="Reset" class="btn btn-outline-light btn-block btn-md" style="color: grey;">
+                    <input type="submit" value="Log In" class="btn btn-outline-light btn-block btn-md" >
+					<input type="reset" value="Reset" class="btn btn-outline-light btn-block btn-md" >
 					<!-- <input type="reset" value="Create Account" class="btn btn-outline-light btn-block btn-md" style="color: grey;"> -->
-                    <a href="createAccount.html" style="color:#80807e;margin:5px;font-size:20px;">Click to create account</a>
+                <!---->  <a href="createAccountDesign.php" style="color:#80807e;margin:5px;font-size:20px;">Click to create account</a>
                   </form>
                 </div>
               </div>
@@ -80,7 +45,7 @@
     </div>
 
 
-</div>
+</div> 
 <!-- 
 <div class="container" id="createAccount" style="position:absolute;top:35%;left:38%">
 <div class="row">

@@ -7,7 +7,7 @@ $rep=$_POST["repassword"];
 
 
 if(empty($fn) || empty($fn) || empty($fn) || empty($fn) || $p != $rep ){
-    header("location:logIn.html");
+    header("location:logIn.php");
 }else{
 
 //insert query
