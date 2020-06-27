@@ -30,6 +30,6 @@ if(password_verify($p,$row["Password"])){
 }else{
     header("location:createAccountDesign.php");
 }
-mysqli_free_result($res);
+mysqli_free_result($res);//
 mysqli_close($connect);
 ?> 
