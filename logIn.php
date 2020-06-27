@@ -1,7 +1,9 @@
 <html>
 <head>
 <title>My Recipes</title>
-
+<?php
+include("files.php");
+?>
 
 </head>
 <body>
@@ -12,7 +14,7 @@ include("header.php");
  
 <div class="container" id="LogIn" style="position:absolute;top: 28%;">
 <div class="row">
-            <div class="col-lg-6" style="max-width: 450px;">
+            <div class="col-12 col-md-6 col-lg-4" >
               <div class="card text-center card-form" style="background-color:#8eb9ba !important;padding: 10px;">
                 <div class="card-body" style="padding: 10px;">
                   <h4>Welcome to My Recipes</h4>
