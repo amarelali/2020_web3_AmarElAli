@@ -15,15 +15,6 @@ echo ("<script>console.log('Bonjour ".$_SESSION['name']."' );</script>");
     include("files.php");
 ?>
 <style>
-/* .up-arrow {
-    border-color: #c7d4d6 transparent;
-    border-style: solid;
-    border-width: 0px 20px 20px 20px;
-    height: 0px;
-    width: 0px;
-    background: transparent;
-    margin-left: 18px;
-} */
 a ,a:hover{
     text-decoration:none;
     color:black;
@@ -46,6 +37,8 @@ a ,a:hover{
   left: 25px;
   box-shadow: 2px 1px 10px -2px rgba(0, 0, 0, 0.5)
 }
+.btn-sm{
+}
 </style>
 </head>
 <body ><!--style="background-color:#EEE"-->
@@ -59,12 +52,12 @@ include("header.php");
     <div class="row" style="height:90vh"> <!--   height:100vh;width:100%;position:relative;top:20%;background-color:#EEE -->
         <div class="col-12" style="height:100%">
              <div class="row" style="height:100%">
-                <div id="food" class="col-10 col-md-4 mx-auto" style="color: #f8f9fa;height: 20%;border-radius: 34px;box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);position: relative;margin-top: 10%;background-image: url('img/food.jpg');background-repeat: no-repeat;background-size: cover;">
+                <a href="food.php" id="food" class="col-10 col-md-4 mx-auto" style="color: #f8f9fa;height: 20%;border-radius: 34px;box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);position: relative;margin-top: 10%;background-image: url('img/food.jpg');background-repeat: no-repeat;background-size: cover;">
                     <span style="font-weight: bold;font-size: 40px;position: absolute;top: 25%;left: 38%;text-shadow: 5px 2px 4px black;"> Food</span>
-                </div>    
-                <div id="healthy Food"class="col-10 col-md-4 mx-auto" style="color: #f8f9fa;height: 20%;border-radius: 34px;box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);position: relative;margin-top: 10%;background-image: url('img/healthyfood.jpg');background-repeat: no-repeat;background-size: cover;">
+                </a>    
+                <a href="healthyFood.php" id="healthy Food"class="col-10 col-md-4 mx-auto" style="color: #f8f9fa;height: 20%;border-radius: 34px;box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);position: relative;margin-top: 10%;background-image: url('img/healthyfood.jpg');background-repeat: no-repeat;background-size: cover;">
                     <span style="font-weight: bold;font-size: 40px;position: absolute;top: 25%;left: 16%;text-shadow: 5px 2px 4px black;">Healthy Food</span>
-                </div>
+                </a> 
             </div> 
         </div>
     </div>
@@ -72,7 +65,7 @@ include("header.php");
 
 <!-------->
 
-<div class="container-fluid" id="popUp" style="position: absolute;top: -47px;max-width: 200px;left: 4px;" >
+<div class="container-fluid" id="popUp" style="position: absolute;top: -47px;max-width: 200px;left: 4px;display:none" >
 	<div class="row" id="#arrow">
         <div class="up-arrow">
         </div>
