@@ -10,10 +10,18 @@ a ,a:hover{
 }
 </style>
 <div class="container-fluid" >
-    <div class="row" style="overflow-x: hidden;">       
-          <form id="search" method='post' action='ChickenPlates.php?catid=1' style="margin:auto"><div class='row' style='height:100%'>
+    <div class="row" style="overflow-x: hidden;">   
+    <?php     
+        $sql = "SELECT Name FROM `categories` WHERE `SectionId`=1";
+        $result = mysqli_query($connect, $sql); 
+        while ($row = mysqli_fetch_assoc($result)) { 
+            foreach ($row as $field => $value) { ?>    
+          <form id="search" method='post' action='Items.php?categorieName=<?php echo $value ?>' style="margin:auto"><div class='row' style='height:100%'>
+            <?php }
+            }
+            ?>
           <?php     
-        $sql = "SELECT Name FROM `categories`";
+        $sql = "SELECT Name FROM `categories` WHERE `SectionId`=1";
         $result = mysqli_query($connect, $sql); 
         while ($row = mysqli_fetch_assoc($result)) { 
             foreach ($row as $field => $value) { ?>
@@ -26,4 +34,5 @@ a ,a:hover{
      </div>
     </form>
 </div>
+
 
