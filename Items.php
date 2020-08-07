@@ -11,13 +11,13 @@ include("connect.php");
     $sq="SELECT * FROM `items`";
     $result=mysqli_query($connect,$sq);
     while($row= mysqli_fetch_assoc($result)){?>
-        <form id="search" method='post' action='Recipes.php?ItemName=<?php echo $row['Name'] ?>' style="margin:auto">
+        <form id="item" method='post' action='Recipes.php?ItemName=<?php echo $row['Name']?>&ItemId=<?php echo $row['Id']?>' style="margin:auto">
             <div class="col-12 col-md-4 col-lg-3 mx-auto" style="max-width: 18rem;margin-top:10px;min-height:276.672px;min-width:258px;" href="Recipes.php">
                 <div class="card" style="width:100%;border-radius: 10px;position:relative">
-                    <a href="Recipes.php" target="_blank">
+                    <a href="#" onclick="document.getElementById('item').submit();" >
                         <img class="card-img-top" src="img/<?php echo $row['Images'] ?>" alt="Card image cap" style="max-height:171.266px;border-radius: 10px 10px 0px 0px;">
                     </a>
-                    <a href="Recipes.php" class="card-body" style="text-decoration: none;color: black;padding:10px" target="_blank">
+                    <a href="#" onclick="document.getElementById('item').submit();" class="card-body" style="text-decoration: none;color: black;padding:10px">
 <!-- <a href="index1.php"> -->
                         <h6 class="card-title" style="font-size:16px;height:50px !important;width: 141px !important;"><?php echo $row['Name'] ?></h6>
 <!-- </a> -->

@@ -53,3 +53,27 @@ Add the parmesan and cream and season with pepper to taste and a pinch of salt i
 - - - -->
 </div>
 </div>
+<script>
+<?php 
+$id = htmlspecialchars($_GET['ItemId']);
+?>
+var id=<?php echo $id ?>;
+console.log(id);
+
+$(function(){
+    $.ajax({
+        url:"Recipes_Json.php",
+        success:function(data){
+            var myJson=JSON.parse(data);
+            console.log(myJson);
+            for(x in myJson){
+                
+                if (id == myJson[x].Id){
+                    console.log(myJson[x]);
+                }
+            }
+             
+        }
+    });
+});
+</script>
