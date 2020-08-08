@@ -21,7 +21,7 @@ include("header.php");
                   <p style="font-size:20px;">
                         Log in to my recipes and follow our delicious food 
                  </p>
-<form action="checkLogIn.php" method="POST" onsubmit="return checkForm()">
+<form action="checkLogIn.php" method="POST" ><!--onsubmit="return checkForm()"-->
                     </div>
                     <div class="form-group">
                       <input type="email" class="form-control form-control-md" id="inputEmail" name="email" placeholder="Email"  />
