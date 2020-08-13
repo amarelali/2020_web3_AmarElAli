@@ -1,0 +1,1 @@
+<title>My Favorite</title>

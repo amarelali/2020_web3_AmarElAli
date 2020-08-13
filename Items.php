@@ -4,7 +4,11 @@
 include("header.php");
 include("files.php");
 include("connect.php");
+include("Menu.php");
+
 ?>
+<title>Items</title>
+
 <div class="container-fluid">
     <div class="row" style="margin:0px 10px">
     <?php 
@@ -21,7 +25,7 @@ include("connect.php");
 
                     </a>
                     <div style="position:absolute;top: 185px;left: 207px;">
-                        <i class="fa fa-heart-o fa-2x" aria-hidden="true" style="color:#db2a2a"></i>
+                        <i id="<?php echo $row['Id']?>" class="fa fa-heart-o fa-2x" aria-hidden="true" style="color:#db2a2a"></i>
                     </div>
                 </div>
             </div>    
@@ -36,3 +40,28 @@ include("connect.php");
 
 </div>
 </div>
+<script>
+$(document).ready(function(){
+  $(".fa").click(function(){
+   // $(this).removeClass("fa-heart-o");
+   // $(this).addClass("fa-heart");
+   $(this).toggleClass("fa-heart-o fa-heart");
+   if($(this).hasClass("fa-heart-o")){
+      console.log($(this).attr('id'));
+      var id=$(this).attr('id');
+   <?php
+   $sq="UPDATE items SET isFavorite = '1' WHERE id = '1'";
+    mysqli_query($connect,$sq);?>
+   
+  }
+  if($(this).hasClass("fa-heart")){
+      console.log($(this).attr('id'));
+      <?php
+    $sq="DELETE FROM `favoriterecipes` WHERE `itemsId` = '5'";
+    mysqli_query($connect,$sq);?>
+  }
+  });
+  
+ 
+});
+</script>

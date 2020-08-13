@@ -37,13 +37,25 @@ a ,a:hover{
   left: 25px;
   box-shadow: 2px 1px 10px -2px rgba(0, 0, 0, 0.5)
 }
-.btn-sm{
+.butns{
+    height:57px;
+}
+@media screen and (min-width: 992px){
+    .categories span{
+        font-size: 40px;
+    }
+}
+@media screen and (max-width: 992px){
+    .categories span{
+        font-size: 33px;
+    }
 }
 </style>
 </head>
 <body ><!--style="background-color:#EEE"-->
 <?php
 include("header.php");
+include("Menu.php");
 ?>
 
 
@@ -52,11 +64,11 @@ include("header.php");
     <div class="row" style="height:90vh"> <!--   height:100vh;width:100%;position:relative;top:20%;background-color:#EEE -->
         <div class="col-12" style="height:100%">
              <div class="row" style="height:100%">
-                <a href="GlobalRecipes.php" class="col-10 col-md-4 mx-auto" style="color: #f8f9fa;height: 20%;border-radius: 34px;box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);position: relative;margin-top: 10%;background-image: url('img/food.jpg');background-repeat: no-repeat;background-size: cover;" target="_blank">
-                    <span style="font-weight: bold;font-size: 40px;position: absolute;top: 25%;left: 14%;text-shadow: 5px 2px 4px black;">Global Recipes</span>
+                <a  href="GlobalRecipes.php" class="col-10 col-md-4 mx-auto categories" style="color: #f8f9fa;height: 20%;border-radius: 34px;box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);position: relative;margin-top: 10%;background-image: url('img/food.jpg');background-repeat: no-repeat;background-size: cover;" target="_blank">
+                    <span style="font-weight: bold;position: absolute;top: 25%;left: 14%;text-shadow: 5px 2px 4px black;">Global Recipes</span>
                 </a>    
-                <a href="HealthyRecipes.php" class="col-10 col-md-4 mx-auto" style="color: #f8f9fa;height: 20%;border-radius: 34px;box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);position: relative;margin-top: 10%;background-image: url('img/healthyfood.jpg');background-repeat: no-repeat;background-size: cover;" target="_blank">
-                    <span style="font-weight: bold;font-size: 40px;position: absolute;top: 25%;left: 11%;text-shadow: 5px 2px 4px black;">Healthy Recipes</span>
+                <a href="HealthyRecipes.php" class="col-10 col-md-4 mx-auto categories" style="color: #f8f9fa;height: 20%;border-radius: 34px;box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);position: relative;margin-top: 10%;background-image: url('img/healthyfood.jpg');background-repeat: no-repeat;background-size: cover;" target="_blank">
+                    <span style="font-weight: bold;position: absolute;top: 25%;left: 11%;text-shadow: 5px 2px 4px black;">Healthy Recipes</span>
                 </a> 
             </div> 
         </div>
@@ -65,41 +77,6 @@ include("header.php");
 
 <!-------->
 
-<div class="container-fluid" id="popUp" style="position: absolute;top: -47px;max-width: 200px;left: 4px;display:none" >
-	<div class="row" id="#arrow">
-        <div class="up-arrow">
-        </div>
-    </div>
-    <div class="row" style="background-color:white;max-width:200px;box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);border-radius: 9px;">    
-		<a href="MyProfile.php"class="col-md-12 " style="margin-top:1rem;color:#8abab9;"><!---->
-            <i class="fa fa-user fa-lg" aria-hidden="true" style="margin-right:4px"></i> My Profile
-			<hr>
-		</a>
-		<a href="LastRecipesChecked.php" class="col-md-12" style="color:#8abab9;">
-        <i class="fa fa-history fa-lg" aria-hidden="true" style="margin-right:4px"></i> History
-			<hr>
-		</a>
-		<a href="yourFavorite.php" class="col-md-12"  style="color:#8abab9;">
-        <i class="fa fa-heart fa-lg" aria-hidden="true" style="margin-right:4px"></i>Your Favorite
-			<hr>
-		</a>
-		<a href="LogOut.php" class="col-md-12 " style="margin-bottom:1rem;color:#8abab9;"><!---->
-        <i class="fa fa-sign-out fa-lg" aria-hidden="true" style="margin-right:4px"></i>Log Out
-		</a>
-		
-	</div>
-</div>
-
 <!-------->
 </body>
-<script>
-        $('#menuBar').click(function(){
-            $("#popUp").show();
-         });
- 
-    $(document).on('click', function (event) {
-        if (event.target.closest('#menuBar') || event.target.closest('#popUp') ) { return; }
-        $("#popUp").hide();
-    });
-    </script>
 </html>
