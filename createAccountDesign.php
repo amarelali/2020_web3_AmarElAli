@@ -9,12 +9,19 @@
 <script src="js/Login.js"></script>
 <script src="js/bootstrap.min.js"></script>
 
+
 </head>
 <body>
  <?php
   include("files.php");
  include("header.php");
  ?>
+ <style>
+.formStyle,#menuBar{
+  display:none;
+}
+
+</style>
 <!-- <div style="width:100%;position:relative;">
 <img src='img/MyRecipesBackground2.jpg' width="100%"/>
 </div>-->

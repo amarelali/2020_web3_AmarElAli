@@ -10,6 +10,12 @@ include("files.php");
 <?php
 include("header.php");
 ?>
+<style>
+.formStyle,#menuBar{
+  display:none;
+}
+
+</style>
 <!-----------------------------------Login-------------------->
  
 <div class="container" id="LogIn" style="position:absolute;top: 28%;">

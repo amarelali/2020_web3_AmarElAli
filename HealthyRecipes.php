@@ -3,6 +3,7 @@ Include("connect.php");
 Include("files.php");
 include("header.php");
 ?>
+<title>Healthy Recipes</title>
 <style>
 a ,a:hover{
     text-decoration:none;

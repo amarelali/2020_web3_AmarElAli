@@ -3,6 +3,7 @@ include("connect.php");
 include("files.php");
 include("header.php");
 ?>
+<title>Recipe</title>
 <div class="container-fluid" style="margin-top:10px">
 
 <div class="row">
