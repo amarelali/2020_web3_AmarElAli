@@ -50,7 +50,7 @@ $(document).ready(function(){
       console.log($(this).attr('id'));
       var id=$(this).attr('id');
    <?php
-   $sq="UPDATE items SET isFavorite = '1' WHERE id = '1'";
+   $sq="UPDATE `items` SET `isFavorite` = '0' WHERE `items`.`Id` = 2";
     mysqli_query($connect,$sq);?>
    
   }

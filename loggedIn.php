@@ -64,10 +64,10 @@ include("Menu.php");
     <div class="row" style="height:90vh"> <!--   height:100vh;width:100%;position:relative;top:20%;background-color:#EEE -->
         <div class="col-12" style="height:100%">
              <div class="row" style="height:100%">
-                <a  href="GlobalRecipes.php" class="col-10 col-md-4 mx-auto categories" style="color: #f8f9fa;height: 20%;border-radius: 34px;box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);position: relative;margin-top: 10%;background-image: url('img/food.jpg');background-repeat: no-repeat;background-size: cover;" target="_blank">
+                <a  href="GlobalRecipes.php" class="col-10 col-md-4 mx-auto categories" style="color: #f8f9fa;height: 20%;border-radius: 34px;box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);position: relative;margin-top: 10%;background-image: url('img/food.jpg');background-repeat: no-repeat;background-size: cover;" >
                     <span style="font-weight: bold;position: absolute;top: 25%;left: 14%;text-shadow: 5px 2px 4px black;">Global Recipes</span>
                 </a>    
-                <a href="HealthyRecipes.php" class="col-10 col-md-4 mx-auto categories" style="color: #f8f9fa;height: 20%;border-radius: 34px;box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);position: relative;margin-top: 10%;background-image: url('img/healthyfood.jpg');background-repeat: no-repeat;background-size: cover;" target="_blank">
+                <a href="HealthyRecipes.php" class="col-10 col-md-4 mx-auto categories" style="color: #f8f9fa;height: 20%;border-radius: 34px;box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);position: relative;margin-top: 10%;background-image: url('img/healthyfood.jpg');background-repeat: no-repeat;background-size: cover;" >
                     <span style="font-weight: bold;position: absolute;top: 25%;left: 11%;text-shadow: 5px 2px 4px black;">Healthy Recipes</span>
                 </a> 
             </div> 
