@@ -14,11 +14,19 @@ include("header.php");
 .formStyle,#menuBar{
   display:none;
 }
+.error {
+   background: #F2DEDE;
+   color: #A94442;
+   padding: 10px;
+   width: 95%;
+   border-radius: 5px;
+   margin: 20px auto;
+}
 
 </style>
 <!-----------------------------------Login-------------------->
  
-<div class="container" id="LogIn" style="position:absolute;top: 28%;">
+<div class="container" id="LogIn" style="position:absolute;top: 21%;">
 <div class="row">
             <div class="col-12 col-md-6 col-lg-4" >
               <div class="card text-center card-form" style="background-color:#8eb9ba !important;padding: 10px;">
@@ -27,7 +35,10 @@ include("header.php");
                   <p style="font-size:20px;">
                         Log in to my recipes and follow our delicious food 
                  </p>
-<form action="checkLogIn.php" method="POST" ><!--onsubmit="return checkForm()"-->
+                 <?php if (isset($_GET['error'])) { ?>
+     		            <p class="error"><?php echo $_GET['error']; ?></p>
+     	           <?php } ?>
+                 <form action="checkLogIn.php" method="POST" ><!--onsubmit="return checkForm()"-->
                     </div>
                     <div class="form-group">
                       <input type="email" class="form-control form-control-md" id="inputEmail" name="email" placeholder="Email"  />
