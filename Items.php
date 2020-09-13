@@ -17,8 +17,8 @@ include("Menu.php");
     while($row= mysqli_fetch_assoc($result)){?>
             <div class="col-12 col-md-4 col-lg-3 mx-auto" style="max-width: 18rem;margin-top:10px;min-height:276.672px;min-width:258px;" href="Recipes.php">
                 <div class="card" style="width:100%;border-radius: 10px;position:relative">
-                    <a href="Recipes.php?ItemName=<?php echo $row['Name']?>&ItemId=<?php echo $row['Id']?>"  >
-                        <img class="card-img-top" src="img/<?php echo $row['Images'] ?>" alt="Card image cap" style="max-height:171.266px;border-radius: 10px 10px 0px 0px;">
+                    <a href="Recipes.php?ItemName=<?php echo $row['Name']?>&ItemId=<?php echo $row['Id']?>">
+                        <img class="card-img-top" src="img/<?php echo $row['Images'] ?>" alt="Card image cap" style="border-radius: 10px 10px 0px 0px;">
                     </a>
                     <a href="Recipes.php?ItemName=<?php echo $row['Name']?>&ItemId=<?php echo $row['Id']?>" class="card-body" style="text-decoration: none;color: black;padding:10px">
                         <h6 class="card-title" style="font-size:16px;height:50px !important;width: 141px !important;"><?php echo $row['Name'] ?></h6>

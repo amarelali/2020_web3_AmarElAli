@@ -4,7 +4,10 @@
   height: 10vh;
 }
 .formStyle{
-  margin-left:768px;
+  margin-left: 494px !important;
+}
+.logo{
+  width:34%;
 }
 }
 @media screen and (max-width: 992px){
@@ -13,6 +16,9 @@
 }
 .header{
   margin-bottom:70px;
+}
+.logo{
+  width:39%;
 }
 }
 </style>
