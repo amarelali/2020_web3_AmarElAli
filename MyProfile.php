@@ -1,5 +1,6 @@
 <title>My Profile</title>
 <?php
+session_start();
 include("header.php");
 include("files.php");
 include("connect.php");
@@ -28,16 +29,7 @@ include("Menu.php");
    font-size: 11px;
 }
 </style>
-<?php
-session_start();
-$id=$_SESSION['id'];
-$query = "SELECT * FROM `users` WHERE `userId`='".$_SESSION['id']."'";
-$result =mysqli_query($connect,$query);
-while($rows = mysqli_fetch_assoc($result)){
-    $FN= $rows['FirstName']." ".$rows['LastName'];
-    $e= $rows['Email'];
-}
-?>
+
 <div class="container " style="position:absolute;top: 13%;">
     <div class="row">
               <div class="col-md-5 m-auto" style="max-width:340px !important;">
@@ -53,11 +45,11 @@ while($rows = mysqli_fetch_assoc($result)){
                     <form method="post" action="passwordModified.php">
                       <div class="form-group margin">
                       <span style="float:left">Full Name:</span>
-                        <input type="text" class="form-control form-control-sm" name="" value="<?php echo $FN ?>" readonly/>
+                        <input type="text" class="form-control form-control-sm" name="name" value="<?php echo $_SESSION['name'] ?>" readonly/>
                       </div>
                       <div class="form-group margin">
                       <span style="float:left">Email:</span>
-                        <input type="email" class="form-control form-control-sm"  name="email" value="<?php echo $e ?>" readonly/>
+                        <input type="email" class="form-control form-control-sm"  name="email" value="<?php echo $_SESSION['email'] ?>" readonly/>
                       </div>
                       <div class="form-group margin">
                       <span style="float:left">Current Password:</span>
@@ -78,3 +70,4 @@ while($rows = mysqli_fetch_assoc($result)){
         </div>
     </div>
 </div>
+ 

@@ -32,8 +32,8 @@
 <img class="logo" src="img/MyRecipesLogo.jpg">
 </div>
 <div class="col-" style="margin-top: 10px;">
-<form class="form-inline md-form mr-auto mb-4 formStyle">
-<input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search" style="border-radius:25px;">
+<form methode="post" action="Search.php" id="searchField" class="form-inline md-form mr-auto mb-4 formStyle">
+<input class="form-control mr-sm-2" type="text" placeholder="Search" name="search" aria-label="Search" style="border-radius:25px;">
 <button class="btn btn-elegant btn-rounded btn-sm my-0" type="submit" style="border-radius:25px;color:#91babe;border:1px solid #91babe;">Search</button>
 </form>
 </div>

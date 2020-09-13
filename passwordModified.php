@@ -12,23 +12,24 @@ $result =mysqli_query($connect,$query);
 while($rows = mysqli_fetch_assoc($result)){
     if($cp != ""){
     if(!password_verify($cp,$rows["Password"])){
-        header("location:myProfile.php?error=Your password was incorrect");
+        header("location:MyProfile.php?error=Your password was incorrect");
     }else{
         if($np != $rtp){
-            header("location:myProfile.php?error=retyping password is incorrect");
+            header("location:MyProfile.php?error=retyping password is incorrect");
         }else{
         $encrypass=password_hash($cp,PASSWORD_DEFAULT);
         $query_modify="UPDATE `users` SET `Password`='".$encrypass."' WHERE userId = '".$_SESSION['id']."'";
         echo $query_modify;
         echo"<br><br>";
         echo $encrypass;
-        mysqli_query($db,$query_modify);
-        header("location:myProfile.php?notify=Your Password has been successfully changed.");
+        mysqli_query($connect,$query_modify);
+        header("location:MyProfile.php?notify=Your Password has been successfully changed.");
         }
     }
 }else{
-    header("location:myProfile.php?error=Your Password was incorrectly typed.");
+    header("location:MyProfile.php?error=Your Password was incorrectly typed.");
 }
-
 }
+mysqli_free_result($result);//
+mysqli_close($connect);
 ?>

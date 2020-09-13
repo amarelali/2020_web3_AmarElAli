@@ -1,21 +1,21 @@
-
-<!-------------------------------->
-<?php
+<title>History</title>
+<?php 
 include("header.php");
 include("files.php");
 include("connect.php");
 include("Menu.php");
+session_start();
 
 ?>
-<title>Items</title>
-
 <div class="container-fluid">
     <div class="row" style="margin:0px 10px">
     <?php 
-    $sq="SELECT * FROM `items`";
-    $result=mysqli_query($connect,$sq);
-    while($row= mysqli_fetch_assoc($result)){?>
+    $sessionId=$_SESSION['id'];
+    $q="SELECT DISTINCT i.itemsId , i.Name , i.Images , h.date FROM items i  Inner JOIN history h on i.itemsId=h.itemsId WHERE userId=$sessionId";
+    $res=mysqli_query($connect,$q);
+    while($row=mysqli_fetch_assoc($res)){?>
             <div class="col-12 col-md-4 col-lg-3 mx-auto" style="max-width: 18rem;margin-top:10px;min-height:276.672px;min-width:258px;" href="Recipes.php">
+                <div><?php echo $row['date'] ?></div>
                 <div class="card" style="width:100%;border-radius: 10px;position:relative">
                     <a href="Recipes.php?ItemName=<?php echo $row['Name']?>&ItemId=<?php echo $row["itemsId"]?>">
                         <img class="card-img-top" src="img/<?php echo $row['Images'] ?>" alt="Card image cap" style="border-radius: 10px 10px 0px 0px;">
@@ -30,7 +30,7 @@ include("Menu.php");
                 </div>
             </div>    
 <?php }
-mysqli_free_result($result);//
+mysqli_free_result($res);//
 mysqli_close($connect);
 ?>
 </div>
@@ -42,28 +42,3 @@ mysqli_close($connect);
 
 </div>
 </div>
-<script>
-$(document).ready(function(){
-  $(".fa").click(function(){
-   // $(this).removeClass("fa-heart-o");
-   // $(this).addClass("fa-heart");
-   $(this).toggleClass("fa-heart-o fa-heart");
-   if($(this).hasClass("fa-heart-o")){
-      console.log($(this).attr('id'));
-      var id=$(this).attr('id');
-   <?php
-   $sq="UPDATE `items` SET `isFavorite` = '0' WHERE `items`.`Id` = 2";
-    mysqli_query($connect,$sq);?>
-   
-  }
-  if($(this).hasClass("fa-heart")){
-      console.log($(this).attr('id'));
-      <?php
-    $sq="DELETE FROM `favoriterecipes` WHERE `itemsId` = '5'";
-    mysqli_query($connect,$sq);?>
-  }
-  });
-  
- 
-});
-</script>

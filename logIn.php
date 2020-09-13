@@ -54,9 +54,7 @@ include("header.php");
                 </div>
               </div>
               
-<div class="alert alert-danger" role="alert" id="wrongPassAlert" style="position:absolute;z-index:1000;display: none;">
-  <strong>Wrong Password!</strong> 
-  </div>
+
             </div>
             </div>
         </div>
@@ -65,46 +63,8 @@ include("header.php");
 
 
 </div> 
-<!-- 
-<div class="container" id="createAccount" style="position:absolute;top:35%;left:38%">
-<div class="row">
-            <div class="col-lg-6" style="max-width:450px;">
-              <div class="card text-center card-form" style="background-color:#f1ae79 !important;">
-                <div class="card-body">
-                  <h4>Welcome to My Recipes</h4>
-                  <p style="font-size:20px;">
-                        Sign up to my recipes and follow our delicious food 
-                 </p>
-<form action="createAccount.php" method="POST" onsubmit="return checkForm()">
-                    <div class="form-group">
-                      <input type="text" class="form-control form-control-md" id="input1" name="firstName" placeholder="First Name"  />
-                    </div>
-					<div class="form-group">
-                      <input type="text" class="form-control form-control-md" id="input2" name="lastName" placeholder="Last Name"  />
-                    </div>
-                    <div class="form-group">
-                      <input type="email" class="form-control form-control-md" id="inputEmail" name="email" placeholder="Email"  />
-                    </div>
-                    <div class="form-group">
-                      <input type="password" class="form-control form-control-md" id="input3" name="password" placeholder="Password"  />
-                    </div>
-                    <div class="form-group">
-                      <input type="password" class="form-control form-control-md" id="input4" name="repassword" placeholder="Confirm Password"  />
-                    </div>
-                    <input type="submit" value="Submit" class="btn btn-outline-light btn-block btn-md" style="color: grey;">
-					<input type="reset" value="Reset" class="btn btn-outline-light btn-block btn-md" style="color: grey;">
-                  </form>
-                </div>
-              </div>
-            </div>
-            </div>
-        </div>
-
-
-</div> -->
+ 
 
 </body>
-<script>
-      $('.alert').alert();
-</script>
+ 
 </html>

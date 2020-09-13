@@ -33,7 +33,7 @@ $row=mysqli_fetch_assoc($res);
 if(password_verify($pass,$row["Password"])){
     session_start();
 
-    $_SESSION['id']=$row['Id'];
+    $_SESSION['id']=$row['userId'];
     $_SESSION['name']=$row['FirstName']." ".$row['LastName'];
     $_SESSION['email']=$row['Email'];
     $_SESSION['password']=$row['Password'];

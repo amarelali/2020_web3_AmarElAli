@@ -1,7 +1,7 @@
 <?php
 session_start();
 if(isset($_SESSION['name'])){
-echo ("<script>console.log('Bonjour ".$_SESSION['name']."' );</script>");
+echo ("<script>console.log('Bonjour ".$_SESSION['name']." id " .$_SESSION['id']."' );</script>");
 }else{
     echo ("<script>console.log('Erreur' );</script>");
     header("Location:LogIn.php");

@@ -2,6 +2,8 @@
 include("connect.php");
 include("files.php");
 include("header.php");
+include("Menu.php");
+session_start();
 ?>
 <title>Recipe</title>
 <div class="container-fluid" style="margin-top:10px">
@@ -44,7 +46,7 @@ $(function(){
            // console.log(myJson);
             for(x in myJson){
                 
-                if (id == myJson[x].Id){
+                if (id == myJson[x].itemsId){
                     $('#img').attr('src','img/'+myJson[x].Images);
                     $('#nameItem').text(myJson[x].Name);
                     $('#nameItem').css("text-decoration","underline");
@@ -68,4 +70,36 @@ $(function(){
         }
     });
 });
+
 </script>
+<!-------For History--------->
+<?php 
+$time=date("d/m/y").' '.date("h:i:sa");
+$idSession=$_SESSION['id'];
+$idByGet=$_GET['ItemId'];
+$qCheck="SELECT * FROM `history` WHERE itemsId =$idByGet";
+$resCheck=mysqli_query($connect,$qCheck);
+if($resCheck){
+while($row=mysqli_fetch_assoc($resCheck)){
+  $record=$row['itemsId'];
+  $qForDelete="DELETE FROM `history` where itemsId =$record";
+  $deleted=mysqli_query($connect,$qForDelete);
+  if($deleted){
+    echo "deleted";
+  }else{
+    echo 'not deleted';
+  }
+}
+
+}else{
+  echo "error";
+}
+$qH="INSERT INTO `history` (`historyId`, `userId`, `itemsId`, `date`) VALUES (NULL, '$idSession', '$idByGet', '$time')";
+$resH=mysqli_query($connect,$qH);
+if($resH){
+  echo "inserted";
+}else{
+  echo "ERROR ! not inserted";
+}
+
+?>
