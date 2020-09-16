@@ -15,7 +15,7 @@ session_start();
     $res=mysqli_query($connect,$q);
     while($row=mysqli_fetch_assoc($res)){?>
             <div class="col-12 col-md-4 col-lg-3 mx-auto" style="max-width: 18rem;margin-top:10px;min-height:276.672px;min-width:258px;" href="Recipes.php">
-                <div><?php echo $row['date'] ?></div>
+                <div style="text-align: center;"><?php echo $row['date'] ?></div>
                 <div class="card" style="width:100%;border-radius: 10px;position:relative">
                     <a href="Recipes.php?ItemName=<?php echo $row['Name']?>&ItemId=<?php echo $row["itemsId"]?>">
                         <img class="card-img-top" src="img/<?php echo $row['Images'] ?>" alt="Card image cap" style="border-radius: 10px 10px 0px 0px;">

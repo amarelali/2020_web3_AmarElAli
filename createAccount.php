@@ -16,8 +16,9 @@ $connect=mysqli_connect('localhost','root','','web3db');
 if (mysqli_connect_error()){
     echo "FAILD TO CONNECT". mysqli_connect_error();
 }else{
-$query="INSERT INTO `users` (`Id`, `FirstName`, `LastName`, `Email`, `Password`) VALUES (NULL,'$fn', '$ln', '$e', '$encp')";
+$query="INSERT INTO `users` (`userId`, `FirstName`, `LastName`, `Email`, `Password`) VALUES (NULL,'$fn', '$ln', '$e', '$encp')";
 mysqli_query($connect,$query);
+header("location:loggedIn.php");
 }
 }
 mysqli_close($connect);

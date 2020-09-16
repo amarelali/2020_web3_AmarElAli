@@ -74,7 +74,7 @@ $(function(){
 </script>
 <!-------For History--------->
 <?php 
-$time=date("d/m/y").' '.date("h:i:sa");
+$time=date("Y-m-d H:i:s");
 $idSession=$_SESSION['id'];
 $idByGet=$_GET['ItemId'];
 $qCheck="SELECT * FROM `history` WHERE itemsId =$idByGet";

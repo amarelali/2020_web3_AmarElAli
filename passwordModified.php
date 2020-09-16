@@ -17,7 +17,7 @@ while($rows = mysqli_fetch_assoc($result)){
         if($np != $rtp){
             header("location:MyProfile.php?error=retyping password is incorrect");
         }else{
-        $encrypass=password_hash($cp,PASSWORD_DEFAULT);
+        $encrypass=password_hash($np,PASSWORD_DEFAULT);
         $query_modify="UPDATE `users` SET `Password`='".$encrypass."' WHERE userId = '".$_SESSION['id']."'";
         echo $query_modify;
         echo"<br><br>";
