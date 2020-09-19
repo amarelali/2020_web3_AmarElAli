@@ -47,8 +47,8 @@ $(function(){
             for(x in myJson){
                 
                 if (id == myJson[x].itemsId){
-                    $('#img').attr('src','img/'+myJson[x].Images);
-                    $('#nameItem').text(myJson[x].Name);
+                    $('#img').attr('src','img/'+myJson[x].ItemImages);
+                    $('#nameItem').text(myJson[x].ItemName);
                     $('#nameItem').css("text-decoration","underline");
                     var ingredients=myJson[x].ingredients.split('-');
                     for(i in ingredients){

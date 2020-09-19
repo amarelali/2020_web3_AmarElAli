@@ -11,17 +11,17 @@ session_start();
     <div class="row" style="margin:0px 10px">
     <?php 
     $sessionId=$_SESSION['id'];
-    $q="SELECT DISTINCT i.itemsId , i.Name , i.Images , h.date FROM items i  Inner JOIN history h on i.itemsId=h.itemsId WHERE userId=$sessionId";
+    $q="SELECT DISTINCT i.itemsId , i.ItemName , i.ItemImages , h.date FROM items i  Inner JOIN history h on i.itemsId=h.itemsId WHERE userId=$sessionId";
     $res=mysqli_query($connect,$q);
     while($row=mysqli_fetch_assoc($res)){?>
             <div class="col-12 col-md-4 col-lg-3 mx-auto" style="max-width: 18rem;margin-top:10px;min-height:276.672px;min-width:258px;" href="Recipes.php">
                 <div style="text-align: center;"><?php echo $row['date'] ?></div>
                 <div class="card" style="width:100%;border-radius: 10px;position:relative">
-                    <a href="Recipes.php?ItemName=<?php echo $row['Name']?>&ItemId=<?php echo $row["itemsId"]?>">
-                        <img class="card-img-top" src="img/<?php echo $row['Images'] ?>" alt="Card image cap" style="border-radius: 10px 10px 0px 0px;">
+                    <a href="Recipes.php?ItemName=<?php echo $row['ItemName']?>&ItemId=<?php echo $row["itemsId"]?>">
+                        <img class="card-img-top" src="img/<?php echo $row['ItemImages'] ?>" alt="Card image cap" style="border-radius: 10px 10px 0px 0px;">
                     </a>
-                    <a href="Recipes.php?ItemName=<?php echo $row['Name']?>&ItemId=<?php echo $row['itemsId']?>" class="card-body" style="text-decoration: none;color: black;padding:10px">
-                        <h6 class="card-title" style="font-size:16px;height:50px !important;width: 141px !important;"><?php echo $row['Name'] ?></h6>
+                    <a href="Recipes.php?ItemName=<?php echo $row['ItemName']?>&ItemId=<?php echo $row['itemsId']?>" class="card-body" style="text-decoration: none;color: black;padding:10px">
+                        <h6 class="card-title" style="font-size:16px;height:50px !important;width: 141px !important;"><?php echo $row['ItemName'] ?></h6>
 
                     </a>
                     <div style="position:absolute;top: 185px;left: 207px;">
