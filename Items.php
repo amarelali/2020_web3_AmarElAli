@@ -42,28 +42,28 @@ mysqli_close($connect);
 
 </div>
 </div>
-<script>
+<?php
+echo "<script>
 $(document).ready(function(){
-  $(".fa").click(function(){
-   // $(this).removeClass("fa-heart-o");
-   // $(this).addClass("fa-heart");
-   $(this).toggleClass("fa-heart-o fa-heart");
-   if($(this).hasClass("fa-heart-o")){
-      console.log($(this).attr('id'));
-      var id=$(this).attr('id');
-   <?php
-   $sq="UPDATE `items` SET `isFavorite` = '0' WHERE `items`.`Id` = 2";
-    mysqli_query($connect,$sq);?>
-   
-  }
-  if($(this).hasClass("fa-heart")){
-      console.log($(this).attr('id'));
-      <?php
-    $sq="DELETE FROM `favoriterecipes` WHERE `itemsId` = '5'";
-    mysqli_query($connect,$sq);?>
-  }
-  });
+    var res;
+  $('.fa').click(function(){ 
+    $(this).toggleClass('fa-heart-o fa-heart');
+    if($(this).hasClass('fa-heart-o')){
+       console.log($(this).attr('id'));
+       var id=$(this).attr('id');
+    }
+    if($(this).hasClass('fa-heart')){
+        console.log($(this).attr('id'));
+        var res = $(this).attr('id');
+        
   
- 
-});
-</script>
+    }
+    });
+    
+   
+  });
+  </script>
+
+    ";
+?>
+
