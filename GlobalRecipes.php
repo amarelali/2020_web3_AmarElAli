@@ -25,7 +25,8 @@ a ,a:hover{
      <span style="position:absolute;top: 30px;left: 60px;font-size: 24px;font-weight: 500;"><?php echo $row['categName'] ?></span> </a>
 
        <?php   }   
-         ?>
+        mysqli_free_result($result);//
+        mysqli_close($connect); ?>
          </div>
     </form>
     </div>

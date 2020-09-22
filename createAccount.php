@@ -21,5 +21,6 @@ mysqli_query($connect,$query);
 header("location:loggedIn.php");
 }
 }
+
 mysqli_close($connect);
 ?>
