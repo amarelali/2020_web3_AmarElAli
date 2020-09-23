@@ -1,3 +1,4 @@
+<title>My Recipes</title>
 <?php
 $fn=$_POST["firstName"];
 $ln=$_POST["lastName"];
@@ -16,9 +17,19 @@ $connect=mysqli_connect('localhost','root','','web3db');
 if (mysqli_connect_error()){
     echo "FAILD TO CONNECT". mysqli_connect_error();
 }else{
-$query="INSERT INTO `users` (`userId`, `FirstName`, `LastName`, `Email`, `Password`) VALUES (NULL,'$fn', '$ln', '$e', '$encp')";
-mysqli_query($connect,$query);
-header("location:loggedIn.php");
+  include('thankYou.php');
+  $vkey=md5(time().$fn);
+$query="INSERT INTO `users` (`userId`, `FirstName`, `LastName`, `Email`, `Password`, `verified`, `vkey`) VALUES (NULL,'$fn', '$ln', '$e', '$encp', '0', '$vkey')"; 
+$done=mysqli_query($connect,$query);
+if($done){
+   echo "<div>
+<p>Dear user,thank you for registering at My Recipes .</br> 
+To verify your email ,please click on the link<a href='verify.php?vkey=$vkey' target='_blank'> Account verified </a>
+to continue browsing the website .</p>
+<img src='img/mailIcon.png'/>
+</div>";
+}
+//header("location:loggedIn.php");
 }
 }
 
