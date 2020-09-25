@@ -25,7 +25,21 @@ include("Menu.php");
 
                     </a>
                     <div style="position:absolute;top: 185px;left: 207px;">
-                        <i id="<?php echo $row['itemsId']?>" class="fa fa-heart-o fa-2x" aria-hidden="true" style="color:#db2a2a"></i>
+                    
+                    <form name="myForm">
+                    <?php 
+                    $itemId = $row["itemsId"];
+                        $queryCheck="SELECT * FROM favoriterecipes WHERE itemsId = $itemId";
+                        $resultCheck=mysqli_query($connect,$queryCheck);
+                        if(mysqli_fetch_assoc($resultCheck)>0){
+                    ?>
+                        <i id="<?php echo $row['itemsId']?>" class="fa fa-heart fa-2x" aria-hidden="true" style="color:#db2a2a" data-categorie="<?php echo $categ ?>" ></i>
+                    </form>
+                    <?php 
+                        }else{?>
+                         <i id="<?php echo $row['itemsId']?>" class="fa fa-heart-o fa-2x" aria-hidden="true" style="color:#db2a2a" data-categorie="<?php echo $categ ?>" ></i>
+                   <?php }
+                    ?>
                     </div>
                 </div>
             </div>    
@@ -42,20 +56,42 @@ mysqli_close($connect);
 
 </div>
 </div>
-<?php
-echo "<script>
+
+<script>
 $(document).ready(function(){
     var res;
+    function InsertFav(id,categ){
+        document.forms['myForm'].action="InsertData.php?id="+id+"&categ="+categ;
+        document.forms['myForm'].submit();
+        console.log("InsertData.php?id="+id+"&categ="+categ);
+        window.location.href="InsertData.php?id="+id+"&categ="+categ;
+    }
+    function DeleteFav(id,categ){
+        document.forms['myForm'].action="DeleteData.php?id="+id+"&categ="+categ;
+        document.forms['myForm'].submit();
+        console.log("DeleteData.php?id="+id+"&categ="+categ);
+        window.location.href="InsertData.php?id="+id+"&categ="+categ;
+
+    }
   $('.fa').click(function(){ 
     $(this).toggleClass('fa-heart-o fa-heart');
     if($(this).hasClass('fa-heart-o')){
-       console.log($(this).attr('id'));
-       var id=$(this).attr('id');
+        var id=$(this).attr('id');
+       var categ = $(this).attr('data-categorie');
+       DeleteFav(id,categ);
+    console.log(id+"-"+categ);
+
     }
+
     if($(this).hasClass('fa-heart')){
-        console.log($(this).attr('id'));
-        var res = $(this).attr('id');
-        
+        var id = $(this).attr('id');
+        var categ = $(this).attr('data-categorie');
+
+        console.log(id+"-"+categ);
+
+
+        InsertFav(id,categ);
+
   
     }
     });
@@ -63,7 +99,4 @@ $(document).ready(function(){
    
   });
   </script>
-
-    ";
-?>
 
