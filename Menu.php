@@ -34,10 +34,14 @@
 </div>
 </div>
 <div class="row menu" style="background-color:white;max-width:200px;box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);border-radius: 9px;">
-<a href="MyProfile.php"class="col-md-12 butns" style="margin-top:1rem;color:#8abab9;"><!---->
-<i class="fa fa-user fa-lg" aria-hidden="true" style="margin-right:4px"></i> My Profile
+
+<a href="loggedIn.php"class="col-md-12 butns" style="margin-top:1rem;color:#8abab9;"><!---->
+<i class="fa fa-home fa-lg" aria-hidden="true" style="margin-right:4px"></i> Home
 <hr>
 </a>
+<a href="MyProfile.php" class="col-md-12 butns" style="color:#8abab9;">
+<i class="fa fa-user fa-lg" aria-hidden="true" style="margin-right:4px"></i>  My Profile
+<hr>
 <a href="LastRecipesChecked.php" class="col-md-12 butns" style="color:#8abab9;">
 <i class="fa fa-history fa-lg" aria-hidden="true" style="margin-right:4px"></i> History
 <hr>

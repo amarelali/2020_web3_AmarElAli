@@ -1,14 +1,18 @@
 
 <!-------------------------------->
+<title>Items</title>
+
 <?php
 include("header.php");
 include("files.php");
 include("connect.php");
 include("Menu.php");
+session_start();
+$userId =$_SESSION['id'];
 
-?>
-<title>Items</title>
-<?php $categ = $_GET["categorieName"]; ?>
+
+if((time() - @$_SESSION['Created']) < 60000){
+ $categ = $_GET["categorieName"]; ?>
 <div class="container-fluid">
     <div class="row" style="margin:0px 10px">
     <?php 
@@ -29,17 +33,18 @@ include("Menu.php");
                     <form name="myForm">
                     <?php 
                     $itemId = $row["itemsId"];
-                        $queryCheck="SELECT * FROM favoriterecipes WHERE itemsId = $itemId";
+                        $queryCheck="SELECT * FROM favoriterecipes WHERE itemsFavId = $itemId and userFavId=$userId "; // and userFavId=$userId 
                         $resultCheck=mysqli_query($connect,$queryCheck);
                         if(mysqli_fetch_assoc($resultCheck)>0){
                     ?>
-                        <i id="<?php echo $row['itemsId']?>" class="fa fa-heart fa-2x" aria-hidden="true" style="color:#db2a2a" data-categorie="<?php echo $categ ?>" ></i>
-                    </form>
+                        <i id="<?php echo $row['itemsId']?>" class="fa fa-heart fa-2x heart" aria-hidden="true" style="color:#db2a2a" data-categorie="<?php echo $categ ?>" ></i>
                     <?php 
                         }else{?>
-                         <i id="<?php echo $row['itemsId']?>" class="fa fa-heart-o fa-2x" aria-hidden="true" style="color:#db2a2a" data-categorie="<?php echo $categ ?>" ></i>
+                         <i id="<?php echo $row['itemsId']?>" class="fa fa-heart-o fa-2x heart" aria-hidden="true" style="color:#db2a2a" data-categorie="<?php echo $categ ?>" ></i>
                    <?php }
                     ?>
+                    </form>
+
                     </div>
                 </div>
             </div>    
@@ -47,33 +52,34 @@ include("Menu.php");
 mysqli_free_result($result);//
 mysqli_close($connect);
 ?>
+    </div>
 </div>
-</div>
-
-
-
-
 
 </div>
 </div>
+<?php 
+}else{?>
 
+<?php
+}
+?>
 <script>
 $(document).ready(function(){
     var res;
     function InsertFav(id,categ){
-        document.forms['myForm'].action="InsertData.php?id="+id+"&categ="+categ;
+        document.forms['myForm'].action="InsertData.php?id="+id+"&categ="+categ+"&fromPage=Items";
         document.forms['myForm'].submit();
         console.log("InsertData.php?id="+id+"&categ="+categ);
-        window.location.href="InsertData.php?id="+id+"&categ="+categ;
+        window.location.href="InsertData.php?id="+id+"&categ="+categ+"&fromPage=Items";
     }
     function DeleteFav(id,categ){
-        document.forms['myForm'].action="DeleteData.php?id="+id+"&categ="+categ;
+        document.forms['myForm'].action="DeleteData.php?id="+id+"&categ="+categ+"&fromPage=Items";
         document.forms['myForm'].submit();
         console.log("DeleteData.php?id="+id+"&categ="+categ);
-        window.location.href="InsertData.php?id="+id+"&categ="+categ;
+        window.location.href="InsertData.php?id="+id+"&categ="+categ+"&fromPage=Items";
 
     }
-  $('.fa').click(function(){ 
+  $('.heart').click(function(){ 
     $(this).toggleClass('fa-heart-o fa-heart');
     if($(this).hasClass('fa-heart-o')){
         var id=$(this).attr('id');

@@ -5,14 +5,14 @@ include("files.php");
 include("connect.php");
 include("Menu.php");
 session_start();
-
+$userId=$_SESSION['id'];
 
 if((time() - @$_SESSION['Created']) < 60000){?>
 
 <div class="container-fluid">
     <div class="row" style="margin:0px 10px">
     <?php 
-    $sq="SELECT * FROM `items` m INNER JOIN `favoriterecipes`f on m.itemsId= f.itemsId INNER JOIN categories c on c.categId = m.CategorieId";
+    $sq="SELECT * FROM `items` m INNER JOIN `favoriterecipes`f on m.itemsId= f.itemsFavId INNER JOIN categories c on c.categId = m.CategorieId WHERE f.userFavId=$userId";
      $result=mysqli_query($connect,$sq);
     while($row= mysqli_fetch_assoc($result)){
       $categ = $row['categName'];?>
@@ -28,7 +28,7 @@ if((time() - @$_SESSION['Created']) < 60000){?>
                     <div style="position:absolute;top: 185px;left: 207px;">
                     
                     <form name="myFav">
-                        <i id="<?php echo $row['itemsId']?>" class="fa fa-heart fa-2x" aria-hidden="true" style="color:#db2a2a" data-categorie="<?php echo $categ ?>" ></i>
+                        <i id="<?php echo $row['itemsId']?>" class="fa fa-heart fa-2x heart" aria-hidden="true" style="color:#db2a2a" data-categorie="<?php echo $categ ?>" ></i>
                     </form>
                     </div>
                 </div>
@@ -75,14 +75,14 @@ $(document).ready(function(){
     var res;
 
     function DeleteFav(id,categ){
-        document.forms['myFav'].action="DeleteData.php?id="+id+"&categ="+categ;
+        document.forms['myFav'].action="DeleteData.php?id="+id+"&categ="+categ+"&fromPage=YourFavorite";
         document.forms['myFav'].submit();
         console.log("DeleteData.php?id="+id+"&categ="+categ);
-        window.location.href="DeleteData.php?id="+id+"&categ="+categ;
+        window.location.href="DeleteData.php?id="+id+"&categ="+categ+"&fromPage=YourFavorite";
 
     }
 
-  $('.fa').click(function(){ 
+  $('.heart').click(function(){ 
     $(this).toggleClass('fa-heart-o fa-heart');
 
     // if($(this).hasClass('fa-heart-o')){

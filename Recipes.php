@@ -43,7 +43,7 @@ $(function(){
         url:"Recipes_Json.php",
         success:function(data){
             var myJson=JSON.parse(data);
-           // console.log(myJson);
+            console.log("my json : \n"+myJson);
             for(x in myJson){
                 
                 if (id == myJson[x].itemsId){
@@ -63,7 +63,7 @@ $(function(){
                         compteur++;
                         console.log(HowToMakeIt[i]);
                     }
-                    console.log(myJson[x]);
+                    console.log("myJson[x] \n" +myJson[x]);
                 }
             }
              
