@@ -10,6 +10,7 @@ $categ=$_GET['categ'];
 echo $categ;
 
 echo $id ;
+$textSearched=$_GET['searchtxt'];
 $qFavRemove="DELETE FROM `favoriterecipes` WHERE `itemsFavId` = $id";
 $resultFavRemove=mysqli_query($connect,$qFavRemove);
 if($resultFavRemove){
@@ -25,5 +26,7 @@ if($from == "YourFavorite"){
 
 }else if($from =="history"){
     header('location:LastRecipesChecked.php');
+}else if($from =="Search"){
+    header('location:Search.php?search='.$textSearched);
 }
 ?>

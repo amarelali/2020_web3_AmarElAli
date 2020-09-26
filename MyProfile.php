@@ -28,6 +28,9 @@ include("Menu.php");
    margin: 10px auto;
    font-size: 11px;
 }
+#searchField{
+display:none;
+}
 </style>
 <?php 
 if((time() - @$_SESSION['Created']) < 60000){
