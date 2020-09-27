@@ -42,12 +42,17 @@
 <a href="MyProfile.php" class="col-md-12 butns" style="color:#8abab9;">
 <i class="fa fa-user fa-lg" aria-hidden="true" style="margin-right:4px"></i>  My Profile
 <hr>
+</a>
 <a href="LastRecipesChecked.php" class="col-md-12 butns" style="color:#8abab9;">
 <i class="fa fa-history fa-lg" aria-hidden="true" style="margin-right:4px"></i> History
 <hr>
 </a>
 <a href="yourFavorite.php" class="col-md-12 butns" style="color:#8abab9;">
 <i class="fa fa-heart fa-lg" aria-hidden="true" style="margin-right:4px"></i>Your Favorite
+<hr>
+</a>
+<a href="Dashboard.php" class="col-md-12 butns" style="color:#8abab9;">
+<i class="fa fa-dashboard fa-lg" aria-hidden="true" style="margin-right:4px"></i>Dashboard
 <hr>
 </a>
 <a href="LogOut.php" class="col-md-12 butns" style="color:#8abab9;"><!---->
