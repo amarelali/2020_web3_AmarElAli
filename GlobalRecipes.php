@@ -21,8 +21,8 @@ a ,a:hover{
         while ($row = mysqli_fetch_assoc($result)) { 
             ?>
             
-           <div class="col-12 col-md-4 col-lg-3 mx-auto" style="padding:10px">
-           <div style="color: #f8f9fa;text-align:center;border-radius: 11px;height: 52px;box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);background-color: #9ab8b7;padding: 10px;">
+           <div class="col-12 col-md-5 col-lg-4 mx-auto" style="padding:20px">
+           <div style="color: #f8f9fa;text-align: center;border-radius: 11px;box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);background-color: #9ab8b7;padding: 36px;height: 116px;font-size: 25px;">
                 <a href="Items.php?categorieName=<?php echo $row['categName'] ?>" > <?php echo $row['categName'] ?> </a>
                 </div>
            </div>
