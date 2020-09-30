@@ -13,22 +13,22 @@ include("Menu.php");
     <div class="row" style="margin:0px 10px">
     <?php 
         $searchText = $_GET['search'];
-        $q="SELECT * FROM `items` i INNER JOIN categories c on c.categId =i.CategorieId WHERE ItemName LIKE '%$searchText%'";
+        $q="SELECT * FROM `items` i INNER JOIN categories c on c.categId =i.CategorieId Inner JOIN `section` s on s.SectionId = c.SectionId WHERE ItemName LIKE '%$searchText%'";
         $res=mysqli_query($connect,$q);
         if($res){
     while($row= mysqli_fetch_assoc($res)){
         $categ = $row['categName'];
         ?>
-            <div class="col-12 col-md-4 col-lg-3 mx-auto" style="max-width: 18rem;margin-top:10px;min-height:276.672px;min-width:258px;" href="Recipes.php">
+            <div class="col-12 col-md-4 col-lg-3 mx-auto" style="max-width: 18rem;margin-top:10px;min-height: 307.266px !important;min-width:258px;" href="Recipes.php">
                 <div class="card" style="width:100%;border-radius: 10px;position:relative">
                     <a href="Recipes.php?ItemName=<?php echo $row['ItemName']?>&ItemId=<?php echo $row['itemsId']?>">
                         <img class="card-img-top" src="img/<?php echo $row['ItemImages'] ?>" alt="Card image cap" style="border-radius: 10px 10px 0px 0px;height:171.278px !important">
                     </a>
-                    <a href="Recipes.php?ItemName=<?php echo $row['ItemName']?>&ItemId=<?php echo $row['itemsId']?>" class="card-body" style="text-decoration: none;color: black;padding:10px">
+                    <a href="Recipes.php?ItemName=<?php echo $row['ItemName']?>&ItemId=<?php echo $row['itemsId']?>" class="card-body" style="text-decoration: none;color: black;padding: 10px 10px 0px 10px;">
                         <h6 class="card-title" style="font-size:16px;height:50px !important;width: 141px !important;"><?php echo $row['ItemName'] ?></h6>
 
                     </a>
-                    <div style="position:absolute;top: 185px;left: 207px;">
+                    <div style="position:absolute;top: 185px;left: 207px;padding-bottom: 0px;">
                     <form name="myForm">
                     <?php 
                     $itemId = $row["itemsId"];
@@ -43,6 +43,10 @@ include("Menu.php");
                    <?php }
                     ?>
                     </form>
+                    </div>
+                    <div class="row" style="padding: 7px;height:56.25px !important;">
+                        <div class="col-6" style="color: #8dbbba;"><?php echo $categ ?> </div>
+                        <div class="col-6" style="color: #6c757d;padding: 0px;"><?php echo $row['Name']; ?> </div>
                     </div>
                 </div>
             </div>    

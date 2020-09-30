@@ -20,6 +20,14 @@
 .formStyle,#menuBar{
   display:none;
 }
+.error {
+   background: #F2DEDE;
+   color: #A94442;
+   padding: 10px;
+   width: 95%;
+   border-radius: 5px;
+   margin: 20px auto;
+}
 
 </style>
 <!-- <div style="width:100%;position:relative;">
@@ -36,6 +44,9 @@
                     <p style="font-size:15px;">
                           Sign up to my recipes and follow our delicious food 
                    </p>
+                   <?php if (isset($_GET['error'])) { ?>
+     		            <p class="error"><?php echo $_GET['error']; ?></p>
+     	           <?php } ?>
                     <form action="createAccount.php" method="POST" onsubmit="return checkForm()">
                       <div class="form-group">
                         <input type="text" class="form-control form-control-sm" id="input1" name="firstName" placeholder="First Name"  />

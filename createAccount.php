@@ -1,4 +1,5 @@
 <title>My Recipes</title>
+
 <?php
 $fn=$_POST["firstName"];
 $ln=$_POST["lastName"];
@@ -8,7 +9,11 @@ $rep=$_POST["repassword"];
 
 
 if(empty($fn) || empty($fn) || empty($fn) || empty($fn) || $p != $rep ){
-    header("location:logIn.php");
+  if(empty($fn) || empty($fn) || empty($fn) || empty($fn) ){
+    header("location:createAccountDesign.php?error= please fill out all fields ");
+  }else if($p != $rep){
+    header("location:createAccountDesign.php?error= failed to confirm password");
+  }
 }else{
 
 //insert query

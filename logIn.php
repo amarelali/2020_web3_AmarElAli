@@ -22,6 +22,15 @@ include("header.php");
    border-radius: 5px;
    margin: 20px auto;
 }
+.notify{
+    background-color: #def0d8;
+    color: #769671;
+    padding: 10px;
+   width: 95%;
+   border-radius: 5px;
+   margin: 10px auto;
+   font-size: 13px;
+}
 
 </style>
 <!-----------------------------------Login-------------------->
@@ -38,6 +47,9 @@ include("header.php");
                  <?php if (isset($_GET['error'])) { ?>
      		            <p class="error"><?php echo $_GET['error']; ?></p>
      	           <?php } ?>
+                  <?php if (isset($_GET['notify'])) { ?>
+     		             <p class="notify"><?php echo $_GET['notify']; ?></p>
+     	             <?php } ?>
                  <form action="checkLogIn.php" method="POST" ><!--onsubmit="return checkForm()"-->
                     </div>
                     <div class="form-group">
@@ -49,7 +61,8 @@ include("header.php");
                     <input type="submit" value="Log In" class="btn btn-outline-light btn-block btn-md" >
 					<input type="reset" value="Reset" class="btn btn-outline-light btn-block btn-md" >
 					<!-- <input type="reset" value="Create Account" class="btn btn-outline-light btn-block btn-md" style="color: grey;"> -->
-                <!---->  <a href="createAccountDesign.php" style="color:#80807e;margin:5px;font-size:20px;">Click to create account</a>
+                <!---->  <a href="createAccountDesign.php" style="color:#5f1312;margin:5px;font-size:20px;">Click to create account</a>
+                <a href="ForgetPassword.php" style="margin:5px;color: #ea1c19;font-size: 16px;">Forget Password?</a>
                   </form>
                 </div>
               </div>

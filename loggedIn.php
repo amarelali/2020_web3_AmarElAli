@@ -11,7 +11,7 @@ echo ("<script>console.log('Bonjour ".$_SESSION['name']." id " .$_SESSION['id'].
 
 <head>
 <title>My Recipes</title>
-<script src="js/Login.js"></script>
+
 <?php 
     include("files.php");
 ?>

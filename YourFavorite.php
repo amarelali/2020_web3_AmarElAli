@@ -12,7 +12,7 @@ if((time() - @$_SESSION['Created']) < 60000){?>
 <div class="container-fluid">
     <div class="row" style="margin:0px 10px">
     <?php 
-    $sq="SELECT * FROM `items` m INNER JOIN `favoriterecipes`f on m.itemsId= f.itemsFavId INNER JOIN categories c on c.categId = m.CategorieId WHERE f.userFavId=$userId";
+    $sq="SELECT * FROM `items` m INNER JOIN `favoriterecipes`f on m.itemsId= f.itemsFavId INNER JOIN categories c on c.categId = m.CategorieId  Inner JOIN `section` s on s.SectionId = c.SectionId WHERE f.userFavId=$userId";
      $result=mysqli_query($connect,$sq);
     while($row= mysqli_fetch_assoc($result)){
       $categ = $row['categName'];?>
@@ -30,6 +30,10 @@ if((time() - @$_SESSION['Created']) < 60000){?>
                     <form name="myFav">
                         <i id="<?php echo $row['itemsId']?>" class="fa fa-heart fa-2x heart" aria-hidden="true" style="color:#db2a2a" data-categorie="<?php echo $categ ?>" ></i>
                     </form>
+                    </div>
+                    <div class="row" style="padding: 7px;height:56.25px !important;">
+                        <div class="col-6" style="color: #8dbbba;"><?php echo $categ ?> </div>
+                        <div class="col-6" style="color: #6c757d;padding: 0px;"><?php echo $row['Name']; ?> </div>
                     </div>
                 </div>
             </div>    

@@ -14,7 +14,7 @@ if((time() - @$_SESSION['Created']) < 60000){
     <div class="row" style="margin:0px 10px">
     <?php 
     $sessionId=$_SESSION['id'];
-    $q="SELECT DISTINCT c.categName, i.itemsId , i.ItemName , i.ItemImages , h.date FROM items i Inner JOIN history h on i.itemsId=h.itemsId Inner Join categories c on c.categId = i.CategorieId WHERE userId=$sessionId";
+    $q="SELECT DISTINCT c.categName, i.itemsId , i.ItemName , i.ItemImages , h.date ,h.historyId , s.Name FROM items i Inner JOIN history h on i.itemsId=h.itemsId Inner Join categories c on c.categId = i.CategorieId Inner JOIN `section` s on s.SectionId = c.SectionId WHERE userId=$sessionId ORDER BY h.historyId DESC limit 12 ";
     $res=mysqli_query($connect,$q);
     while($row=mysqli_fetch_assoc($res)){
         $categ= $row['categName'];?>
@@ -45,6 +45,10 @@ if((time() - @$_SESSION['Created']) < 60000){
                     ?>
                     </form>
                     
+                    </div>
+                    <div class="row" style="padding: 7px;height:56.25px !important;">
+                        <div class="col-6" style="color: #8dbbba;"><?php echo $categ ?> </div>
+                        <div class="col-6" style="color: #6c757d;padding: 0px;"><?php echo $row['Name']; ?> </div>
                     </div>
                 </div>
             </div>    
