@@ -5,9 +5,10 @@ include("files.php");
 include("connect.php");
 include("Menu.php");
 session_start();
-$userId=$_SESSION['id'];
 
-if((time() - @$_SESSION['Created']) < 60000){?>
+if((time() - @$_SESSION['Created']) < 60000){
+  $userId=$_SESSION['id'];
+?>
 
 <div class="container-fluid">
     <div class="row" style="margin:0px 10px">
