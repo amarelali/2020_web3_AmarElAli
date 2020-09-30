@@ -5,6 +5,8 @@ body{
 }
 
 </style>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
 <?php
 
 $fn=$_POST["firstName"];
@@ -28,16 +30,22 @@ $connect=mysqli_connect('localhost','root','','web3db');
 if (mysqli_connect_error()){
     echo "FAILD TO CONNECT". mysqli_connect_error();
 }else{
-  include('thankYou.php');
+
   $vkey=md5(time().$fn);
 $query="INSERT INTO `users` (`userId`, `FirstName`, `LastName`, `Email`, `Password`, `verified`, `vkey`) VALUES (NULL,'$fn', '$ln', '$e', '$encp', '0', '$vkey')"; 
 $done=mysqli_query($connect,$query);
 if($done){
-   echo "<div>
-<p>Dear user,thank you for registering at My Recipes .</br> 
+   echo "<div class='container-fluid'>
+   <div class='row' style='margin-top: 15%;text-align:center;font-weight:bold'>
+       <div class='col-12'>
+<p>Dear user,thank you for registering at My Recipes .<br> 
 To verify your email ,please click on the link<a href='verify.php?vkey=$vkey' target='_blank'> Account verified </a>
 to continue browsing the website .</p>
-<img src='img/mailIcon.png'/>
+
+       </div>
+<div class='col-12' style='text-align:center'>
+   <img src='img/mailIcon.png'>
+   </div> </div>
 </div>";
 }
 //header("location:loggedIn.php");
