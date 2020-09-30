@@ -35,7 +35,7 @@ if((time() - @$_SESSION['Created']) < 60000){
                     <form name="myForm">
                     <?php 
                     $itemId = $row["itemsId"];
-                        $queryCheck="SELECT * FROM favoriterecipes WHERE itemsFavId = $itemId";
+                        $queryCheck="SELECT * FROM favoriterecipes WHERE itemsFavId = $itemId and userFavId = $sessionId ";
                         $resultCheck=mysqli_query($connect,$queryCheck);
                         if(mysqli_fetch_assoc($resultCheck)>0){
                     ?>

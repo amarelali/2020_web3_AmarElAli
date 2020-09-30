@@ -13,7 +13,7 @@ if((time() - @$_SESSION['Created']) < 60000){
 <div class="container-fluid">
     <div class="row" style="margin:0px 10px">
     <?php 
-    $sq="SELECT * FROM `items` m INNER JOIN `favoriterecipes`f on m.itemsId= f.itemsFavId INNER JOIN categories c on c.categId = m.CategorieId  Inner JOIN `section` s on s.SectionId = c.SectionId WHERE f.userFavId=$userId";
+    $sq="SELECT * FROM `items` m INNER JOIN `favoriterecipes`f on m.itemsId= f.itemsFavId INNER JOIN categories c on c.categId = m.CategorieId  Inner JOIN `section` s on s.SectionId = c.SectionId WHERE f.userFavId=$userId Order by f.id Desc";
      $result=mysqli_query($connect,$sq);
 
     if( mysqli_num_rows($result) >0){

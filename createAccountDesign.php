@@ -46,19 +46,19 @@
      	           <?php } ?>
                     <form action="createAccount.php" method="POST" onsubmit="return checkForm()">
                       <div class="form-group">
-                        <input type="text" class="form-control form-control-sm" id="input1" name="firstName" placeholder="First Name"  />
+                        <input type="text" class="form-control form-control-sm" id="input1" name="firstName" placeholder="First Name" required />
                       </div>
                       <div class="form-group">
-                        <input type="text" class="form-control form-control-sm" id="input2" name="lastName" placeholder="Last Name"  />
+                        <input type="text" class="form-control form-control-sm" id="input2" name="lastName" placeholder="Last Name" required />
                       </div>
                       <div class="form-group">
-                        <input type="email" class="form-control form-control-sm" id="inputEmail" name="email" placeholder="Email"  />
+                        <input type="email" class="form-control form-control-sm" id="inputEmail" name="email" placeholder="Email" required />
                       </div>
                       <div class="form-group">
-                        <input type="password" class="form-control form-control-sm" id="input3" name="password" placeholder="Password"  />
+                        <input type="password" class="form-control form-control-sm" id="input3" name="password" placeholder="Password" required />
                       </div>
                       <div class="form-group">
-                        <input type="password" class="form-control form-control-sm" id="input4" name="repassword" placeholder="Confirm Password"  />
+                        <input type="password" class="form-control form-control-sm" id="input4" name="repassword" placeholder="Confirm Password" required />
                       </div>
                       <input type="submit" value="Submit" class="btn btn-outline-light btn-block btn-sm" style="height: 28px !important;" >
                       <input type="reset" value="Reset" class="btn btn-outline-light btn-block btn-sm" style="height: 28px !important;" >

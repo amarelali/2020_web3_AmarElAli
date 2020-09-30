@@ -85,21 +85,21 @@ while($row=mysqli_fetch_assoc($resCheck)){
   $qForDelete="DELETE FROM `history` where itemsId =$record";
   $deleted=mysqli_query($connect,$qForDelete);
   if($deleted){
-    echo "deleted";
+    // echo "deleted";
   }else{
-    echo 'not deleted';
+    // echo 'not deleted';
   }
 }
 
 }else{
-  echo "error";
+  // echo "error";
 }
 $qH="INSERT INTO `history` (`historyId`, `userId`, `itemsId`, `date`) VALUES (NULL, '$idSession', '$idByGet', '$time')";
 $resH=mysqli_query($connect,$qH);
 if($resH){
-  echo "inserted";
+  // echo "inserted";
 }else{
-  echo "ERROR ! not inserted";
+  // echo "ERROR ! not inserted";
 }
 
 ?>
