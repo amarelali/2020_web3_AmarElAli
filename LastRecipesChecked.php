@@ -16,6 +16,8 @@ if((time() - @$_SESSION['Created']) < 60000){
     $sessionId=$_SESSION['id'];
     $q="SELECT DISTINCT c.categName, i.itemsId , i.ItemName , i.ItemImages , h.date ,h.historyId , s.Name FROM items i Inner JOIN history h on i.itemsId=h.itemsId Inner Join categories c on c.categId = i.CategorieId Inner JOIN `section` s on s.SectionId = c.SectionId WHERE userId=$sessionId ORDER BY h.historyId DESC limit 12 ";
     $res=mysqli_query($connect,$q);
+    if( mysqli_num_rows($res) >0){
+
     while($row=mysqli_fetch_assoc($res)){
         $categ= $row['categName'];?>
     
@@ -53,7 +55,21 @@ if((time() - @$_SESSION['Created']) < 60000){
                 </div>
             </div>    
 <?php } 
-mysqli_free_result($res);//
+    }else{?>
+        <div class="container">
+            <div class="row" style="margin-top: 30px;">
+               <div class="col-12">
+                   <div style="margin: auto;padding: 10px;text-align: center;background-color: #c4d8d9;border-radius: 12px;width: 50%;">
+                         You don't browse any item yet
+                        <br/>
+                       <a href="loggedIn.php">Go to Home page</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+  <?php   }
+mysqli_free_result($res);
 mysqli_close($connect);
 
 }else{?>

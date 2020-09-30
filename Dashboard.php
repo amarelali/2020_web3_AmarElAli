@@ -123,3 +123,8 @@ while($data=mysqli_fetch_assoc($res2)){
 
   </body>
 </html>
+<?php 
+
+mysqli_free_result($res);
+mysqli_close($connect);
+?>

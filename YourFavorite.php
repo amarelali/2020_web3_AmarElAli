@@ -14,7 +14,10 @@ if((time() - @$_SESSION['Created']) < 60000){?>
     <?php 
     $sq="SELECT * FROM `items` m INNER JOIN `favoriterecipes`f on m.itemsId= f.itemsFavId INNER JOIN categories c on c.categId = m.CategorieId  Inner JOIN `section` s on s.SectionId = c.SectionId WHERE f.userFavId=$userId";
      $result=mysqli_query($connect,$sq);
-    while($row= mysqli_fetch_assoc($result)){
+
+    if( mysqli_num_rows($result) >0){
+    while($row = mysqli_fetch_assoc($result)){
+
       $categ = $row['categName'];?>
             <div class="col-12 col-md-4 col-lg-3 mx-auto " id="item<?php echo $row["itemsId"]?>" style="max-width: 18rem;margin-top:10px;min-height:276.672px;min-width:258px;" href="Recipes.php">
                 <div class="card" style="width:100%;border-radius: 10px;position:relative">
@@ -38,6 +41,23 @@ if((time() - @$_SESSION['Created']) < 60000){?>
                 </div>
             </div>    
 <?php }
+      }else{
+        ?>
+        <div class="container">
+            <div class="row" style="margin-top: 30px;">
+               <div class="col-12">
+                   <div style="margin: auto;padding: 10px;text-align: center;background-color: #c4d8d9;border-radius: 12px;width: 50%;">
+                         You don't have favorite items yet
+                        <br/>
+                       <a href="loggedIn.php">Go to Home page</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+       
+     <?php }  
+  
 mysqli_free_result($result);//
 mysqli_close($connect);
 ?>
@@ -89,11 +109,6 @@ $(document).ready(function(){
   $('.heart').click(function(){ 
     $(this).toggleClass('fa-heart-o fa-heart');
 
-    // if($(this).hasClass('fa-heart-o')){
-    //    var id=$(this).attr('id');
-    //    $('#item'+id).hide();
-    //    DeleteFav(id);
-    //  }
      if($(this).hasClass('fa-heart-o')){
         var id=$(this).attr('id');
        var categ = $(this).attr('data-categorie');

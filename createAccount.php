@@ -1,6 +1,12 @@
 <title>My Recipes</title>
+<style>
+body{
+  background-color:#EEE;
+}
 
+</style>
 <?php
+
 $fn=$_POST["firstName"];
 $ln=$_POST["lastName"];
 $e=$_POST["email"];

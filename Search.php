@@ -4,8 +4,8 @@ include("header.php");
 include("files.php");
 include("connect.php");
 include("Menu.php");
-// $searchText=$_GET['search'];
-// echo $searchText; 
+session_start();
+$userId = $_SESSION['id'];
 ?>
 
 
@@ -32,7 +32,7 @@ include("Menu.php");
                     <form name="myForm">
                     <?php 
                     $itemId = $row["itemsId"];
-                        $queryCheck="SELECT * FROM favoriterecipes WHERE itemsFavId = $itemId";
+                        $queryCheck="SELECT * FROM favoriterecipes WHERE itemsFavId = $itemId and userFavId = $userId";
                         $resultCheck=mysqli_query($connect,$queryCheck);
                         if(mysqli_fetch_assoc($resultCheck)>0){
                     ?>
@@ -51,6 +51,7 @@ include("Menu.php");
                 </div>
             </div>    
 <?php } } 
+mysqli_free_result($resultCheck);//
 mysqli_free_result($res);//
 mysqli_close($connect);
 ?>

@@ -6,7 +6,6 @@
 
 <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" />
 <script src="js/jquery.min.js"></script>
-<!-- <script src="js/Login.js"></script> -->
 <script src="js/bootstrap.min.js"></script>
 
 
@@ -30,9 +29,7 @@
 }
 
 </style>
-<!-- <div style="width:100%;position:relative;">
-<img src='img/MyRecipesBackground2.jpg' width="100%"/>
-</div>-->
+
 
 
 <div class="container" id="createAccount" style="position:absolute;top: 13%;">

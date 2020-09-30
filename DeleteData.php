@@ -29,4 +29,8 @@ if($from == "YourFavorite"){
 }else if($from =="Search"){
     header('location:Search.php?search='.$textSearched);
 }
+
+mysqli_free_result($resultFavRemove);
+mysqli_close($connect);
+
 ?>

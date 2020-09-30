@@ -41,6 +41,8 @@ include('connect.php');
                     </a> 
 
                <?php }
+mysqli_free_result($result);
+mysqli_close($connect);
 
              ?>
               

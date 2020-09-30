@@ -49,6 +49,7 @@ if((time() - @$_SESSION['Created']) < 60000){
                 </div>
             </div>    
 <?php }
+mysqli_free_result($resultCheck);//
 mysqli_free_result($result);//
 mysqli_close($connect);
 ?>
