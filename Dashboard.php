@@ -62,49 +62,14 @@ while($data=mysqli_fetch_assoc($res2)){
 
         chart.draw(data, options);
       }
-
-
-
-    
-      google.charts.load("current2", {packages:["corechart"]});
-      google.charts.setOnLoadCallback(drawChart2);
-      function drawChart2() {
-        var data2 = google.visualization.arrayToDataTable([
-          ['Task', 'Hours per Day'],
-          ['Work',     11],
-          ['Eat',      2],
-          ['Commute',  2],
-          ['Watch TV', 2],
-          ['Sleep',    7],
-        ]);
-
-        var options2 = {
-          title: 'My Daily Activities',
-          width: 400,
-          height: 240,
-          is3D: true
-
-         };
-
-        var chart2 = new google.visualization.PieChart(document.getElementById('piechart2'));
-        chart2.draw(data2, options2);
-      }
-
+      
     </script>
   </head>
   <body>
-    <div id="piechart" style="width: 900px; height: 500px;"></div>
-    <div id="piechart2" style="width: 900px; height: 500px;"></div>
+    <div class="col-12 mx-auto" id="piechart" style="overflow-x: hidden;" ></div>
 
   </body>
 </html>
 <?php
      array_push($array,$new_array[0],$new_array[1]);
-    // echo $item;
- 
-    
- //}
-// echo "<br/>";
-// print_r($array);
-
  ?>
